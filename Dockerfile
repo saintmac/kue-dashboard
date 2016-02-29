@@ -1,12 +1,11 @@
-FROM pavlov/alpine-node:latest
+FROM mhart/alpine-node:latest
 MAINTAINER Alex Kern <alex@pavlovml.com>
  
 # install
 RUN npm install kue
 
 # cleanup
-RUN apk del gcc g++ python && \
-    rm -rf /tmp/* /var/cache/apk/* /root/.npm /root/.npmrc /root/.node-gyp
+RUN rm -rf /tmp/* /var/cache/apk/* /root/.npm /root/.npmrc /root/.node-gyp
 
 # run
 EXPOSE 3000

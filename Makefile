@@ -3,7 +3,7 @@
 all: run
 
 run: | node_modules
-	./node_modules/kue/bin/kue-dashboard -r $(REDIS_URL)
+	./node_modules/kue/bin/kue-dashboard -r $(REDIS_URL) -p 3002
 
 build:
 	docker build -t pavlov/kue-dashboard .
