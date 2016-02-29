@@ -1,5 +1,7 @@
 # kue-dashboard
 
+Simple Docker container for [kue's](https://github.com/Automattic/kue) web UI.
+
 ## Usage
 
 Available on Docker Hub as [pavlov/kube-dashboard](https://hub.docker.com/r/pavlov/kube-dashboard).
