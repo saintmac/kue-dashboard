@@ -1,14 +1,14 @@
-FROM pavlov/alpine-node:latest
-MAINTAINER Alex Kern <alex@pavlovml.com>
+FROM alpine:3.12
+MAINTAINER saintmac
 
 # deps
-RUN apk --update add gcc g++ python
- 
+RUN apk add --no-cache gcc g++ python3 nodejs npm
+
 # install
 RUN npm install kue
 
 # cleanup
-RUN apk del gcc g++ python && \
+RUN apk del gcc g++ python3 && \
     rm -rf /tmp/* /var/cache/apk/* /root/.npm /root/.npmrc /root/.node-gyp
 
 # run
